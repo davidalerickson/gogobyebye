@@ -13,7 +13,8 @@ const PostTemplate = ({data}) => {
     <Wrapper>
     {/* post info */}
     <article>
-      <Image fluid={{...image.childImageSharp.fluid, aspectRatio: 21/9} }/>
+      <Image fluid={image.childImageSharp.fluid}/>
+      {/* <Image fluid={{...image.childImageSharp.fluid, aspectRatio: 21/9} }/> */}
       
       <div className="post-info">
         <span>{category}</span>
