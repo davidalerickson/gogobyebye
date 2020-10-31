@@ -4,10 +4,13 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   .lottie-animation {
-    width: 60%;
+    width: 80%;
     /* border: solid 1px black;
     border-radius: 5px; */
     margin: 0 auto;
+    @media screen and (min-width: 800px) {
+        width: 55%;
+    }
   }
 `;
 
