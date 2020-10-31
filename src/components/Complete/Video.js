@@ -49,7 +49,7 @@ const RegVideoWrapper = styled.div`
   }
 `
 const IframeVideoWrapper = styled.div`
-  width: 90vw;
+  width: 100%;
  
 
   .video {

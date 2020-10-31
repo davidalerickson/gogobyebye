@@ -13,7 +13,8 @@ const PostTemplate = ({data}) => {
     <Wrapper>
     {/* post info */}
     <article>
-      <Image fluid={image.childImageSharp.fluid} />
+      <Image fluid={{...image.childImageSharp.fluid, aspectRatio: 21/9} }/>
+      
       <div className="post-info">
         <span>{category}</span>
         <h2>{title}</h2>
@@ -94,7 +95,7 @@ const Wrapper = styled.section`
   @media (min-width: 1170px) {
     & {
       display: grid;
-      grid-template-columns: 1fr 200px;
+      grid-template-columns: 80% 20%;
       column-gap: 4rem;
     }
   }
