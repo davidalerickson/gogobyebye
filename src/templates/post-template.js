@@ -9,6 +9,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const PostTemplate = ({data}) => {
   const {mdx:{frontmatter:{title, category, image, date}, body}} = data
+  console.log(data);
   return <Layout>
     <Wrapper>
     {/* post info */}
@@ -52,6 +53,22 @@ query GetSinglePost($slug: String) {
       slug
     }
     body
+  }
+  allFile(filter: {sourceInstanceName: {eq: "posts"}, relativePath: {regex: "/^2018-10-03-si/"}, extension: {regex: "/jpg/"}}) {
+    edges {
+      node {
+        id
+        sourceInstanceName
+        relativePath
+      }
+    }
+    nodes {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 }
 `
