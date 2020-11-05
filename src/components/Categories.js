@@ -13,6 +13,7 @@ const query = graphql`
 const Categories = () => {
   const data = useStaticQuery(query)
   const {allMdx:{distinct}} = data
+  console.log(data);
   return <ul className="categories">
     {distinct.map((category, index) => {
       return <li key={index}>
