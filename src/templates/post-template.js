@@ -27,6 +27,7 @@ const PostTemplate = ({data}) => {
       <MDXRenderer>
         {body}
       </MDXRenderer>
+      
     </article>
     {/* Banner */}
     <article>
@@ -54,25 +55,25 @@ query GetSinglePost($slug: String) {
     }
     body
   }
-  allFile(filter: {sourceInstanceName: {eq: "posts"}, relativePath: {regex: "/^2018-10-03-si/"}, extension: {regex: "/jpg/"}}) {
-    edges {
-      node {
-        id
-        sourceInstanceName
-        relativePath
-      }
-    }
-    nodes {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
 }
 `
-
+  // allFile(filter: {sourceInstanceName: {eq: "posts"}, relativePath: {regex: "/^2018-10-03-si/"}, extension: {regex: "/jpg/"}}) {
+  // allFile(filter: {sourceInstanceName: {eq: "posts"}, relativePath: {regex: "/^$title/"}, extension: {regex: "/jpg/"}}) {
+  //   edges {
+  //     node {
+  //       id
+  //       sourceInstanceName
+  //       relativePath
+  //     }
+  //   }
+  //   nodes {
+  //     childImageSharp {
+  //       fluid {
+  //         ...GatsbyImageSharpFluid
+  //       }
+  //     }
+  //   }
+  // }
 
 const Wrapper = styled.section`
   width: 85vw;
