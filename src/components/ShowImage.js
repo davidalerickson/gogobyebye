@@ -15,30 +15,52 @@ const ImageWrapper = styled.div`
   border-radius: 5px;
   cursor: pointer;
   transition: 0.5s;
-  :hover{
+  :hover {
     opacity: 30%;
   }
-`
+`;
+
+const LightboxWrapper = styled.div`
+  height: 100vh;
+  width: 100%;
+  position:fixed;
+  top:0;
+  left:0; 
+  background-color: rgba(0,0,0, .8);
+  z-index: 100;
+  &__content {
+
+  }
+`;
 
 //To Do map array of images ot make grid
 const ShowImage = ({ images }) => {
   console.log(images);
   const gridToRender = images.map((fluid, index) => {
     return (
-      <ImageWrapper key={index} onClick={() => alert("You clicked Me")} >
- 
-          {/* <Image fluid={fluid} className="grid-image"/> */}
-          <Image
-            fluid={fluid}
-            imgStyle={{
-              // objectFit: "cover",
-              // objectPosition: "50% 50%",
-            }}
-          />
+      <ImageWrapper key={index} onClick={() => alert(fluid.src)}>
+        {/* <Image fluid={fluid} className="grid-image"/> */}
+        <Image
+          fluid={fluid}
+          imgStyle={{
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "50% 50%",
+          }}
+        />
       </ImageWrapper>
     );
   });
-  return <GridWrapper>{gridToRender}</GridWrapper>;
+  return (
+    <>
+      <GridWrapper>{gridToRender}</GridWrapper>
+      <LightboxWrapper>
+        <div className="lightbox">
+          <div className="lightbox__content">POPUP</div>
+        </div>
+      </LightboxWrapper>
+    </>
+  );
 };
 
 export default ShowImage;
