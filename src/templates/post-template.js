@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import Hero from '../components/Hero'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 import Banner from '../components/Banner'

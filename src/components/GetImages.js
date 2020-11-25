@@ -1,11 +1,10 @@
 import React from 'react'
-import Img from 'gatsby-image';
-import { StaticQuery, graphql, useStaticQuery } from 'gatsby';
+import {graphql, useStaticQuery } from 'gatsby';
 import ShowImage from '../components/ShowImage'
 
 const query = graphql`
 {
-    images: allFile(filter: {sourceInstanceName: {eq: "posts"}, extension: {regex: "/jpeg|jpg|png|gif/"}}) {
+    images: allFile(filter: {sourceInstanceName: {eq: "posts"}, extension: {regex: "/jpeg|jpg|JPG|png|gif/"}}) {
       nodes {
         relativePath
         extension
