@@ -26,15 +26,24 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    `gatsby-transformer-sharp`,
+    // `gatsby-transformer-sharp`,
+    // `gatsby-plugin-sharp`,
+    // {
+    //   resolve: `gatsby-plugin-mdx`,
+    //   options: {
+    //     gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
+    //   },
+    // },
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-transformer-sharp`,
       options: {
-        gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
+        // The option defaults to true
         checkSupportedExtensions: false,
+        gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
       },
     },
+
     {
       resolve: `gatsby-source-instagram`,
       options: {
