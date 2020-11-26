@@ -37,7 +37,7 @@ const GetImages = ({blogDate}) => {
         <div>
             Get Images Component
             <ShowImage images={filteredNodeImages} />
-            <GogoLightbox/>
+            <GogoLightbox images={filteredNodeImages}/>
 
         </div>
     )

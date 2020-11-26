@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
+import LightboxCarouselContainer from '../Widgets/LightboxCarouselContainer'
+
 
 const LightboxWrapper = styled.div`
   height: 100vh;
@@ -15,11 +17,13 @@ const LightboxWrapper = styled.div`
   }
 `;
 
-const GogoLightbox = ({visible, image}) => {
+const GogoLightbox = ({visible, images}) => {
     return (
         <LightboxWrapper>
         <div className="lightbox">
-          <div className="lightbox__content">POPUP</div>
+          <div className="lightbox__content">
+              <LightboxCarouselContainer images={images}/>
+          </div>
         </div>
       </LightboxWrapper>
     )
