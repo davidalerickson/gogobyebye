@@ -20,18 +20,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const LightboxWrapper = styled.div`
-  height: 100vh;
-  width: 100%;
-  position:fixed;
-  top:0;
-  left:0; 
-  background-color: rgba(0,0,0, .8);
-  z-index: 100;
-  &__content {
 
-  }
-`;
 
 //To Do map array of images ot make grid
 const ShowImage = ({ images }) => {
@@ -54,11 +43,6 @@ const ShowImage = ({ images }) => {
   return (
     <>
       <GridWrapper>{gridToRender}</GridWrapper>
-      <LightboxWrapper>
-        <div className="lightbox">
-          <div className="lightbox__content">POPUP</div>
-        </div>
-      </LightboxWrapper>
     </>
   );
 };

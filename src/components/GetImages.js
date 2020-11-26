@@ -1,6 +1,7 @@
 import React from 'react'
 import {graphql, useStaticQuery } from 'gatsby';
 import ShowImage from '../components/ShowImage'
+import GogoLightbox from '../components/Widgets/GogoLightbox'
 
 const query = graphql`
 {
@@ -36,6 +37,8 @@ const GetImages = ({blogDate}) => {
         <div>
             Get Images Component
             <ShowImage images={filteredNodeImages} />
+            <GogoLightbox/>
+
         </div>
     )
 }
