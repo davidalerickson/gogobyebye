@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import Image from "gatsby-image";
 
@@ -23,26 +23,31 @@ const ImageWrapper = styled.div`
 
 
 //To Do map array of images ot make grid
-const ShowImage = ({ images }) => {
-  console.log(images);
+const ShowImage = ({ images, getCurrentPhoto }) => {
+  const [selectedPhoto, setSelectedPhoto] = useState(4)
+  // console.log(images);
   const gridToRender = images.map((fluid, index) => {
     return (
-      <ImageWrapper key={index} onClick={() => alert(fluid.src)}>
+      // <ImageWrapper key={index} onClick={() => alert(fluid.src)}>
+      <ImageWrapper key={index}>
         {/* <Image fluid={fluid} className="grid-image"/> */}
-        <Image
-          fluid={fluid}
-          imgStyle={{
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "50% 50%",
-          }}
-        />
+        <a href="#popup" onClick={() => getCurrentPhoto(index)}>
+          <Image
+            fluid={fluid}
+            imgStyle={{
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "50% 50%",
+            }}
+          />
+        </a>
       </ImageWrapper>
     );
   });
   return (
     <>
-      <GridWrapper>{gridToRender}</GridWrapper>
+      {/* the id #photogrid acts a a target to return from lightbox ie... it switches url so the target psuedoclass of the LightboxWrapper no longer is active */}
+      <GridWrapper id="#photogrid">{gridToRender}</GridWrapper>
     </>
   );
 };

@@ -1,78 +1,84 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import styled from 'styled-components'
-import Image from 'gatsby-image'
-import Banner from '../components/Banner'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import React from "react";
+import Layout from "../components/Layout";
+import styled from "styled-components";
+import Image from "gatsby-image";
+import Banner from "../components/Banner";
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import SimpleReactLightbox from "simple-react-lightbox";
 
-const PostTemplate = ({data}) => {
-  const {mdx:{frontmatter:{title, category, image, date}, body}} = data
+const PostTemplate = ({ data }) => {
+  const {
+    mdx: {
+      frontmatter: { title, category, image, date },
+      body,
+    },
+  } = data;
   console.log(data);
-  return <Layout>
-    <Wrapper>
-    {/* post info */}
-    <article>
-      <Image fluid={image.childImageSharp.fluid}/>
-      {/* <Image fluid={{...image.childImageSharp.fluid, aspectRatio: 21/9} }/> */}
-      
-      <div className="post-info">
-        <span>{category}</span>
-        <h2>{title}</h2>
-        <p>{date}</p>
-        <div className="underline"></div>
+  return (
+    <Layout>
+      <Wrapper>
+        {/* post info */}
+        <SimpleReactLightbox>
+          <article>
+            <Image fluid={image.childImageSharp.fluid} />
+            {/* <Image fluid={{...image.childImageSharp.fluid, aspectRatio: 21/9} }/> */}
 
-      </div>
-      <MDXRenderer>
-        {body}
-      </MDXRenderer>
-      
-    </article>
-    {/* Banner */}
-    <article>
-      <Banner/>
-    </article>
-    </Wrapper>
-  </Layout>
-}
+            <div className="post-info">
+              <span>{category}</span>
+              <h2>{title}</h2>
+              <p>{date}</p>
+              <div className="underline"></div>
+            </div>
+            <MDXRenderer>{body}</MDXRenderer>
+          </article>
+          {/* Banner */}
+          <article>
+            <Banner />
+          </article>
+        </SimpleReactLightbox>
+      </Wrapper>
+    </Layout>
+  );
+};
 
 export const query = graphql`
-query GetSinglePost($slug: String) {
-  mdx(frontmatter: {slug: {eq: $slug}}) {
-    frontmatter {
-      title
-      category
-      date(formatString: "MMMM Do, YYYY")
-      image {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+  query GetSinglePost($slug: String) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        category
+        date(formatString: "MMMM Do, YYYY")
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
+        slug
       }
-      slug
+      body
     }
-    body
   }
-}
-`
-  // allFile(filter: {sourceInstanceName: {eq: "posts"}, relativePath: {regex: "/^2018-10-03-si/"}, extension: {regex: "/jpg/"}}) {
-  // allFile(filter: {sourceInstanceName: {eq: "posts"}, relativePath: {regex: "/^$title/"}, extension: {regex: "/jpg/"}}) {
-  //   edges {
-  //     node {
-  //       id
-  //       sourceInstanceName
-  //       relativePath
-  //     }
-  //   }
-  //   nodes {
-  //     childImageSharp {
-  //       fluid {
-  //         ...GatsbyImageSharpFluid
-  //       }
-  //     }
-  //   }
-  // }
+`;
+// allFile(filter: {sourceInstanceName: {eq: "posts"}, relativePath: {regex: "/^2018-10-03-si/"}, extension: {regex: "/jpg/"}}) {
+// allFile(filter: {sourceInstanceName: {eq: "posts"}, relativePath: {regex: "/^$title/"}, extension: {regex: "/jpg/"}}) {
+//   edges {
+//     node {
+//       id
+//       sourceInstanceName
+//       relativePath
+//     }
+//   }
+//   nodes {
+//     childImageSharp {
+//       fluid {
+//         ...GatsbyImageSharpFluid
+//       }
+//     }
+//   }
+// }
 
 const Wrapper = styled.section`
   width: 85vw;
@@ -117,6 +123,6 @@ const Wrapper = styled.section`
       column-gap: 4rem;
     }
   }
-`
+`;
 
-export default PostTemplate
+export default PostTemplate;

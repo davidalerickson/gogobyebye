@@ -23,7 +23,7 @@ const CarouselContainer = () => {
   return (
     
     <div className="carousel-wrapper">
-      <Carousel showThumbs={false} showArrows autoPlay infiniteLoop interval="8000" transitionTime="500">
+      <Carousel showThumbs={false} showArrows autoPlay infiniteLoop interval="8000" transitionTime="500" selected>
       { nodes.map((item, index) => {
         const {childImageSharp:{fluid}} = item
            return <div key={index}>
