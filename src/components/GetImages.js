@@ -41,7 +41,6 @@ const GetImages = ({blogDate}) => {
   
     return (
         <div>
-            Get Images Component
             <ShowImage images={filteredNodeImages} getCurrentPhoto={getCurrentPhoto}/>
               <GogoLightbox images={filteredNodeImages} currentPhoto={currentPhoto} />
         </div>
