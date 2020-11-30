@@ -56,6 +56,10 @@ const LightboxWrapper = styled.div`
       right: 1.25rem;
     }
   }
+  .carousel .slider-wrapper{
+    //to overide default 100% width so that landscape photos fit.
+    width: 60%;
+  }
 `;
 
 const GogoLightbox = ({ visible, images, currentPhoto }) => {
