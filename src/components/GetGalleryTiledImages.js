@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {graphql, useStaticQuery } from 'gatsby';
 import GalleryTiledGrid from '../components/imagelayout/GalleryTiledGrid'
-// import GogoLightbox from '../components/Widgets/GogoLightbox'
+import GogoLightbox from '../components/Widgets/GogoLightbox'
 
 const query = graphql`
 {
@@ -21,9 +21,10 @@ const query = graphql`
 `
 
 
-const GetImages = ({blogDate}) => {
-  // console.log(blogDate);
+const GetGalleryTiledImages = ({blogDate}) => {
+  console.log(blogDate);
     const data = useStaticQuery(query)
+    console.log(data);
     const {images:{nodes}} = data
     const filteredNodes = nodes.filter((nodeImage, index) => {
       return nodeImage.relativePath.startsWith(blogDate) && nodeImage.relativePath.includes('gallery-images')
@@ -42,9 +43,9 @@ const GetImages = ({blogDate}) => {
     return (
         <div>
             <GalleryTiledGrid images={filteredNodeImages} getCurrentPhoto={getCurrentPhoto}/>
-              {/* <GogoLightbox images={filteredNodeImages} currentPhoto={currentPhoto} /> */}
+              <GogoLightbox images={filteredNodeImages} currentPhoto={currentPhoto} />
         </div>
     )
 }
 
-export default GetImages
+export default GetGalleryTiledImages
