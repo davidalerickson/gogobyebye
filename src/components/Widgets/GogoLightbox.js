@@ -40,12 +40,12 @@ const LightboxWrapper = styled.div`
     @media screen and (min-aspect-ratio: 3/2) {
       width: 70%;
     }
-    @media screen and (min-aspect-ratio: 17/10) {
+    /* @media screen and (min-aspect-ratio: 17/10) {
       width: 60%;
     }
     @media screen and (min-aspect-ratio: 19/10) {
       width: 50%;
-    }
+    } */
   }
   .lightbox__close {
     &:link,
@@ -56,9 +56,19 @@ const LightboxWrapper = styled.div`
       right: 1.25rem;
     }
   }
-  .carousel .slider-wrapper{
-    //to overide default 100% width so that landscape photos fit.
+  /* .carousel .slider-wrapper{
+    //to overide default 100% width so that portrait photos fit.
     width: 60%;
+  } */
+  .carousel-root{
+    margin: auto;
+  }
+  .carousel-root{
+    //to overide default 100% width so that portrait photos fit.
+    width: 95%;
+    @media screen and (min-aspect-ratio: 4/3) {
+      width: 60%;
+    }
   }
 `;
 
