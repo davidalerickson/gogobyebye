@@ -5,31 +5,32 @@ import styled from 'styled-components'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const query = graphql`
-  {
-    allInstaNode(limit: 6) {
-      nodes {
-        localFile {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        original
-      }
-    }
-  }
-`
+// const query = graphql`
+//   {
+//     allInstaNode(limit: 6) {
+//       nodes {
+//         localFile {
+//           childImageSharp {
+//             fluid {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//         original
+//       }
+//     }
+//   }
+// `
 
 const Instagram = () => {
-  const data = useStaticQuery(query)
-  const {
-    allInstaNode: { nodes },
-  } = data
+  // const data = useStaticQuery(query)
+  // const {
+  //   allInstaNode: { nodes },
+  // } = data
   return (
     <Wrapper>
-      <Title title="instagram" />
+      <div>Instagram Section</div>
+      {/* <Title title="instagram" />
       <div className="images">
         {nodes.map((item, index) => {
           const {
@@ -53,7 +54,7 @@ const Instagram = () => {
           gogobyebye Instagram
           <IoMdArrowRoundForward />{' '}
         </a>
-      </div>
+      </div> */}
     </Wrapper>
   )
 }
