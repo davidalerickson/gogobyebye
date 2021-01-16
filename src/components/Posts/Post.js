@@ -9,7 +9,9 @@ import Footer from '../Footer'
 const Post = ({frontmatter, excerpt}) => {
   const {title, image, slug, date, category, readTime} = frontmatter
   return <Wrapper>
-    <Image fluid={image.childImageSharp.fluid} className="img"/>
+    <Link to={`/posts/${slug}`}>
+      <Image fluid={image.childImageSharp.fluid} className="img"/>
+    </Link>
     <div className="info">
       <span className="category">{category}</span>
       <h3>{title}</h3>
