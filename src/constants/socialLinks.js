@@ -1,13 +1,28 @@
-import React from "react"
+import React from "react";
+import styled from "styled-components";
 import {
   FaFacebookSquare,
   FaDribbbleSquare,
   FaTwitterSquare,
   FaInstagramSquare
 } from "react-icons/fa"
+
+const SocialWrapper = styled.ul`
+  .facebook-icon {
+    color: #3b5998;
+  }
+  .twitter-icon {
+    color: #00acee;
+  }
+  .instagram-icon {
+    color: #ea4c89;
+  }
+
+`
+
 const SocialLinks = ({ styleClass }) => {
   return (
-    <ul className={styleClass}>
+    <SocialWrapper className={styleClass}>
       <li>
         <a href="https://www.facebook.com/travelwithdavidandcarmela/?modal=admin_todo_tour">
           <FaFacebookSquare className="social-icon facebook-icon"></FaFacebookSquare>
@@ -23,7 +38,7 @@ const SocialLinks = ({ styleClass }) => {
           <FaTwitterSquare className="social-icon twitter-icon"></FaTwitterSquare>
         </a>
       </li>
-    </ul>
+    </SocialWrapper>
   )
 }
 export default SocialLinks

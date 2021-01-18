@@ -184,23 +184,23 @@ main {
 Navbar
 ===============
 */
-.navbar {
+/* .navbar {
   height: 3rem;
   display: flex;
   align-items: center;
   background: transparent;
   border-top: 1px solid var(--clr-grey-8);
   /* border-bottom: 1px solid var(--clr-grey-8); */
-  box-shadow: 0px 2px 3px var(--clr-grey-8);
+  /* box-shadow: 0px 2px 3px var(--clr-grey-8);
   margin-bottom: 1rem;
-}
+} */ 
 
 /* @media screen and (max-width: 800px) {
   .navbar {
     display:none;
   }
 } */
-
+/* 
 .nav-center {
   width: 90vw;
   max-width: var(--max-width);
@@ -235,9 +235,9 @@ Navbar
 }
 .nav-icons {
   display: none;
-}
+} */
 
-.facebook-icon {
+/* .facebook-icon {
   color: #3b5998;
 }
 .twitter-icon {
@@ -245,8 +245,8 @@ Navbar
 }
 .instagram-icon {
   color: #ea4c89;
-}
-@media screen and (min-width: 800px) {
+} */
+/* @media screen and (min-width: 800px) {
   .toggle-btn {
     display: none;
   }
@@ -291,7 +291,7 @@ Navbar
     color: var(--clr-primary-5);
     transform: translateY(-5px);
   }
-}
+} */
 /*
 ===============
 Sidebar 
