@@ -436,7 +436,7 @@ Posts Component
 Banner Component
 ===============
 */
-.banner-icons {
+/* .banner-icons {
   display: flex;
   justify-content: center;
 }
@@ -449,7 +449,7 @@ Banner Component
 }
 .banner-icons li:hover {
   transform: translateY(-10%);
-}
+} */
 /*
 ===============
 Single Pages
