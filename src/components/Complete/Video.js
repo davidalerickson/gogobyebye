@@ -68,7 +68,7 @@ const IframeVideoWrapper = styled.div`
     left: 0;
     position: absolute;
     top: 0;
-    width: 90%;
+    width: 100%;
   }
 `
 
