@@ -627,7 +627,7 @@ Testing Post and Components
 Footer
 ===============
 */
-.footer {
+/* .footer {
   height: 7rem;
   text-align: center;
   background: var(--clr-black);
@@ -656,4 +656,4 @@ Footer
   color: var(--clr-white);
   text-transform: uppercase;
   letter-spacing: var(--spacing);
-}
+} */
