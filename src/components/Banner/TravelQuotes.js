@@ -1,12 +1,10 @@
 import React from 'react'
 import Title from './Title'
-import Image from 'gatsby-image'
 import styled from 'styled-components'
-import { IoMdArrowRoundForward } from 'react-icons/io'
-import { graphql, useStaticQuery } from 'gatsby'
 
 
-const Instagram = () => {
+
+const TravelQoutes = () => {
 
   return (
     <Wrapper>
@@ -76,4 +74,4 @@ const Wrapper = styled.article`
   
 `
 
-export default Instagram
+export default TravelQoutes

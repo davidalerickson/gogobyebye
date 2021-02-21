@@ -175,10 +175,10 @@ p {
   background: var(--clr-grey-10);
 }
 
-===============
+/* ===============
 Single Pages
-===============
-*/
+=============== */
+
 .newsletter-page,
 .success-page,
 .error-page {
