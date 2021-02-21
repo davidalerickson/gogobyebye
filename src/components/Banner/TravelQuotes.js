@@ -1,10 +1,15 @@
 import React from 'react'
 import Title from './Title'
 import styled from 'styled-components'
+import './quotes'
+import quotes from './quotes'
 
 
 
 const TravelQoutes = () => {
+
+  const randomQuote = quotes[Math.floor(Math.random()*quotes.length)]
+  console.log(randomQuote.author);
 
   return (
     <Wrapper>
@@ -12,10 +17,10 @@ const TravelQoutes = () => {
       <div className="travel-quotes">
         <figure className="quote">
           <blockquote className="quote__text">
-            Still round the corner, there may wait, a new road or a secret gate.
+            {randomQuote.quote}
           </blockquote>
           <figcaption className="quote__author-box">
-            <p className="quote__author-name">J.R.Tolkein - <span className="quote__author-date">1954</span></p>
+            <p className="quote__author-name"> - {randomQuote.author}</p>
           </figcaption>
           
         </figure>
