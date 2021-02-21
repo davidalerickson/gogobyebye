@@ -64,12 +64,12 @@ const Wrapper = styled.article`
     &::before {
         content: "\\201C"; //Need to escape the backslash to get this to work
         position: absolute;
-        top: -1.4rem;
+        top: -1.2rem;
         left: -.3rem;
         font-size: 10rem;
         line-height: 1;
         font-family: sans-serif;
-        color: #eee;
+        color: #ddd999;
         z-index: 1;
 
     }
