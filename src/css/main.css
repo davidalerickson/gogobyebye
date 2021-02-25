@@ -34,6 +34,8 @@ Variables
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-white: #fff;
   --clr-black: #0a0c10;
+  /* custom colors for gogobyebye */
+  --clr-yellowish : #ddd999;
   --ff-primary: 'Roboto', sans-serif;
   --ff-secondary: 'Open Sans', sans-serif;
   --transition: all 0.3s linear;

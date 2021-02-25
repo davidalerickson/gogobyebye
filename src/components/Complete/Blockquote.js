@@ -4,7 +4,7 @@ import { TiWarningOutline } from "react-icons/ti"
 import { GoQuote } from "react-icons/go"
 import styled from "styled-components"
 
-const Blockquote = ({ children, display }) => {
+const Blockquote = ({ children, display, author }) => {
   if (display === "warning")
     return (
       <Wrapper>
@@ -36,6 +36,7 @@ const Blockquote = ({ children, display }) => {
           <GoQuote className="quote-icon" />
           {children}
         </div>
+        <p className="quote-author">-{author}</p>
       </Wrapper>
     )
   }
@@ -101,5 +102,13 @@ const Wrapper = styled.blockquote`
       color: var(--clr-primary-5);
     }
   }
+  .quote-author{
+
+      text-align: right;
+      padding-right: 5rem;
+      padding-bottom: 2rem;
+      margin-top:  -1rem;
+      color: var(--clr-primary-5);
+    }
 `
 export default Blockquote

@@ -69,7 +69,7 @@ const Wrapper = styled.article`
         font-size: 10rem;
         line-height: 1;
         font-family: sans-serif;
-        color: #ddd999;
+        color: var(--clr-yellowish);
         z-index: 1;
 
     }
