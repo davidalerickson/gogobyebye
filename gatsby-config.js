@@ -1,4 +1,12 @@
 module.exports = {
+  siteMetadata:{
+    title: `GoGoByeBye - Travel the world with David and Carmela`,
+    description: `Traveling by train, plane, automobile, camper and occasional boat. David and Carmela take you there.`, 
+    titleTemplate: `%s | GoGoByeBye Travel Blog`,
+    url: `https://gogobyebye.com`,
+    image: `/images/gogobyebye_logo`,
+    twitterUsername: `@gogobyebye1`
+  },
   plugins: [
     `gatsby-plugin-mdx`,
     `gatsby-plugin-react-helmet`,

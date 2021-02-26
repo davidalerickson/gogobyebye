@@ -2,11 +2,13 @@ import React from 'react'
 import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import Posts from '../components/Posts'
+import SEO from '../components/SEO'
 
 
 const PostsPage = ({ data }) => {
   const {allMdx:{nodes:posts}} = data
   return <Layout>
+    <SEO title={`Posts`}/>
      <Posts posts={posts} title="All Posts"/>
   </Layout>
 }

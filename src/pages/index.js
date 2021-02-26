@@ -36,6 +36,7 @@ const IndexPage = ({data}) => {
   const {allMdx:{nodes:posts}} = data
 
   return <Layout>
+    <SEO title={`Home`}/>
  <Carousel/>
  <Posts posts={posts} title="recently published"/>
 

@@ -6,6 +6,7 @@ import Banner from "../components/Banner";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import SimpleReactLightbox from "simple-react-lightbox";
+import SEO from '../components/SEO'
 
 const PostTemplate = ({ data }) => {
   const {
@@ -17,6 +18,7 @@ const PostTemplate = ({ data }) => {
   console.log(data);
   return (
     <Layout>
+      <SEO title={`gogobyebye.com-${title}`}/>
       <Wrapper>
         {/* post info */}
         <SimpleReactLightbox>
