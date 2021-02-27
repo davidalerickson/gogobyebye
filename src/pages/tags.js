@@ -35,6 +35,16 @@ const Tags = ({data}) => {
 
   const slugsWithTags = allPostTags.filter(post => post.frontmatter.tags)
 
+  const renderedPostWithTagsAndSlugs = slugsWithTags.map((slugAndTag, index) => {
+    return <>
+      <h1>{slugAndTag.frontmatter.slug}</h1>
+      <ul>
+        {slugAndTag.frontmatter.tags.map((tag, index) => <li key={index}>{tag}</li>)}
+      </ul>
+
+    </>
+  })
+
   console.log(slugsWithTags);
 
 
@@ -43,6 +53,7 @@ const Tags = ({data}) => {
       <SEO title={`tags`}/>
       <ul>
         {renderedTags}
+        {renderedPostWithTagsAndSlugs}
       </ul>
     </Layout>
   )
