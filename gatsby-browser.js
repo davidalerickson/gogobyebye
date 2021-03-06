@@ -1,6 +1,6 @@
-import './src/css/main.css'
-import { wrapMDX } from './root-mdx'
+// import './src/css/main.css'
+import { wrap } from './root-wrapper'
 
 
 
-export const wrapRootElement = wrapMDX
+export const wrapRootElement = wrap
