@@ -22,15 +22,16 @@ export const pageQuery = graphql`
 
 
 const Tags = ({data}) => {
-  const {tags:{group: tags}} = data
+  const {tags:{group: tags}, tags:{group: totalCount}} = data
   const {tags:{nodes: allPostTags}} = data
 
   console.log(allPostTags);
+  console.log(totalCount);
 
 
   const renderedTags = tags.map((tag, index) => {
     return (
-      <li key={index}>{tag.fieldValue}</li>
+      <li key={index}>{tag.fieldValue} - count: {tag.totalCount}</li>
     )
   })
 
