@@ -1,4 +1,5 @@
 import React from 'react'
+import { kebabCase } from 'lodash'
 import Image from 'gatsby-image'
 import { FaRegClock } from 'react-icons/fa'
 import { IoMdArrowRoundForward } from 'react-icons/io'
@@ -13,11 +14,21 @@ const Post = ({frontmatter, excerpt}) => {
     </Link>
     <div className="info">
       <span className="category">{category}</span>
-      {tags && tags.map((tag, index) => {
-        return <span key={index}>-{tag}-</span>
-      })}
       <h3>{title}</h3>
       <div className="underline"></div>
+      {tags && <span>tags: </span>}
+              {tags &&
+                tags.map((tag, index) => {
+                  return (
+                    <>
+                      <Link to={`/tags/${kebabCase(tag)}`}>
+                        <span key={index} class="tag">
+                          {` ${tag}`}
+                        </span>
+                      </Link>
+                    </>
+                  );
+                })}
       <p>{excerpt}</p>
       <Link to={`/posts/${slug}`} className="link">Continue Reading <IoMdArrowRoundForward/> </Link>
       <footer>
@@ -50,6 +61,18 @@ const Wrapper = styled.article`
     border-radius: var(--radius);
     letter-spacing: var(--spacing);
     color: var(--clr-grey-5);
+  }
+  .tag {
+    display: inline-block;
+    margin: 0 .25rem 1rem;
+    background: var(--clr-primary-5);
+    padding: 0.2rem 0.4rem;
+    text-transform: uppercase;
+    font-size: 0.5rem;
+    font-weight: 700;
+    border-radius: var(--radius);
+    letter-spacing: var(--spacing);
+    color: var(--clr-white);
   }
   h3 {
     font-weight: 400;
