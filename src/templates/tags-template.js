@@ -8,7 +8,7 @@ const TagTemplate = (props) => {
   const {pageContext:{tag}} = props
   // const {data:{categories:{nodes:posts}}} = props
   return <Layout>
-    <h1>Hello from Tag template</h1>
+    <h1>Hello from Tag template - {tag}</h1>
     {/* <Posts posts={posts} title={`category/${category}`}/> */}
   </Layout>
 }

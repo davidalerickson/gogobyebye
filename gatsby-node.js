@@ -45,11 +45,13 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+
+  //using slugtag for the slug and passing down tag as the context
   result.data.tags.group.forEach((tag) => {
     let {fieldValue: theTag} = tag
-    theTag = _.kebabCase(theTag)
+    let slugTag = _.kebabCase(theTag)
     createPage({
-      path: `tags/${theTag}`,
+      path: `tags/${slugTag}`,
       component: path.resolve(`src/templates/tags-template.js`),
       context: {
         tag: theTag
