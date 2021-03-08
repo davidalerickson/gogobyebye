@@ -8,7 +8,7 @@ const TagTemplate = (props) => {
   const {pageContext:{tag}} = props
   const {data:{tags:{nodes:posts}}} = props
   return <Layout>
-    <Posts posts={posts} title={`tag - ${tag}`}/>
+    <Posts posts={posts} title={`tags - ${tag}`}/>
   </Layout>
 }
 
@@ -23,6 +23,7 @@ query GetTags($tag: String) {
         date(formatString: "MMMM Do, YYYY")
         slug
         readTime
+        tags
         image {
           childImageSharp {
             fluid {

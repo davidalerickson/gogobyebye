@@ -22,6 +22,7 @@ query GetCategories($category: String) {
         date(formatString: "MMMM Do, YYYY")
         slug
         readTime
+        tags
         image {
           childImageSharp {
             fluid {

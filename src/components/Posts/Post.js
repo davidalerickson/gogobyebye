@@ -6,13 +6,16 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const Post = ({frontmatter, excerpt}) => {
-  const {title, image, slug, date, category} = frontmatter
+  const {title, image, slug, date, category, tags} = frontmatter
   return <Wrapper>
     <Link to={`/posts/${slug}`}>
       <Image fluid={image.childImageSharp.fluid} className="img"/>
     </Link>
     <div className="info">
       <span className="category">{category}</span>
+      {tags && tags.map((tag, index) => {
+        return <span key={index}>-{tag}-</span>
+      })}
       <h3>{title}</h3>
       <div className="underline"></div>
       <p>{excerpt}</p>

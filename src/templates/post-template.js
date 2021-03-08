@@ -6,19 +6,19 @@ import Banner from "../components/Banner";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import SimpleReactLightbox from "simple-react-lightbox";
-import SEO from '../components/SEO'
+import SEO from "../components/SEO";
 
 const PostTemplate = ({ data }) => {
   const {
     mdx: {
-      frontmatter: { title, category, image, date },
+      frontmatter: { title, category, image, date, tags },
       body,
     },
   } = data;
   console.log(data);
   return (
     <Layout>
-      <SEO title={`gogobyebye.com-${title}`}/>
+      <SEO title={`gogobyebye.com-${title}`} />
       <Wrapper>
         {/* post info */}
         <SimpleReactLightbox>
@@ -28,6 +28,10 @@ const PostTemplate = ({ data }) => {
 
             <div className="post-info">
               <span>{category}</span>
+              {tags &&
+                tags.map((tag, index) => {
+                  return <span key={index}>-{tag}-</span>;
+                })}
               <h2>{title}</h2>
               <p>{date}</p>
               <div className="underline"></div>
@@ -51,6 +55,7 @@ export const query = graphql`
         title
         category
         date(formatString: "MMMM Do, YYYY")
+        tags
         image {
           childImageSharp {
             fluid {
