@@ -1,4 +1,6 @@
 import React from "react";
+import { kebabCase } from 'lodash'
+import { Link } from "gatsby";
 import Layout from "../components/Layout";
 import styled from "styled-components";
 import Image from "gatsby-image";
@@ -28,13 +30,22 @@ const PostTemplate = ({ data }) => {
 
             <div className="post-info">
               <span>{category}</span>
-              {tags &&
-                tags.map((tag, index) => {
-                  return <span key={index}>-{tag}-</span>;
-                })}
               <h2>{title}</h2>
               <p>{date}</p>
               <div className="underline"></div>
+              {tags && <p>tags</p>}
+              {tags &&
+                tags.map((tag, index) => {
+                  return (
+                    <>
+                      <Link to={`/tags/${kebabCase(tag)}`}>
+                        <span class="post-tag" key={index}>
+                          {tag}
+                        </span>
+                      </Link>
+                    </>
+                  );
+                })}
             </div>
             <MDXRenderer>{body}</MDXRenderer>
           </article>
@@ -102,6 +113,10 @@ const Wrapper = styled.section`
       padding: 0.25rem 0.5rem;
       text-transform: uppercase;
       letter-spacing: var(--spacing);
+    }
+    span.post-tag {
+      background: var(--clr-grey-5);
+      margin: 0 0.5rem;
     }
     h2 {
       margin: 1.25rem 0;
