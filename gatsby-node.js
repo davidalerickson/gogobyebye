@@ -1,4 +1,6 @@
 const path = require('path')
+var _ = require('lodash')
+
 
 // create pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
@@ -14,6 +16,11 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       categories: allMdx {
         distinct(field: frontmatter___category)
+      }
+      tags: allMdx {
+        group(field: frontmatter___tags){
+          fieldValue
+        }
       }
     }
   `)
@@ -37,4 +44,17 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     })
   })
+
+  result.data.tags.group.forEach((tag) => {
+    let {fieldValue: theTag} = tag
+    theTag = _.kebabCase(theTag)
+    createPage({
+      path: `tags/${theTag}`,
+      component: path.resolve(`src/templates/tags-template.js`),
+      context: {
+        tag: theTag
+      }
+    })
+  })
+ 
 }
