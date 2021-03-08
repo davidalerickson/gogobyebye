@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import {
   FaFacebookSquare,
-  FaDribbbleSquare,
   FaTwitterSquare,
   FaInstagramSquare
 } from "react-icons/fa"

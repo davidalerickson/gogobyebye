@@ -4,10 +4,9 @@ import { FaRegClock } from 'react-icons/fa'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import Footer from '../Footer'
 
 const Post = ({frontmatter, excerpt}) => {
-  const {title, image, slug, date, category, readTime} = frontmatter
+  const {title, image, slug, date, category} = frontmatter
   return <Wrapper>
     <Link to={`/posts/${slug}`}>
       <Image fluid={image.childImageSharp.fluid} className="img"/>

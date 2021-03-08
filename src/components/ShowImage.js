@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import Image from "gatsby-image";
 
@@ -24,8 +24,7 @@ const ImageWrapper = styled.div`
 
 //To Do map array of images ot make grid
 const ShowImage = ({ images, getCurrentPhoto }) => {
-  const [selectedPhoto, setSelectedPhoto] = useState(4)
-  // console.log(images);
+
   const gridToRender = images.map((fluid, index) => {
     return (
       // <ImageWrapper key={index} onClick={() => alert(fluid.src)}>

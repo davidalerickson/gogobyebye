@@ -26,6 +26,8 @@ export class LottieContainer extends Component {
     });
   }
 
+
+  //add these mouse events to the lottie animation div to make it stop and start
   onAnimEnter = () => {
     lottie.pause(this.props.name);
   };
@@ -34,14 +36,14 @@ export class LottieContainer extends Component {
     lottie.play(this.props.name);
   };
 
+  
+
   render() {
     return (
       <Wrapper>
         <div
           className="lottie-animation"
           ref={(ref) => (this.animBox = ref)}
-          onMouseEnter={() => this.onAnimEnter()}
-          onMouseLeave={() => this.onAnimLeave()}
         ></div>
       </Wrapper>
     );
