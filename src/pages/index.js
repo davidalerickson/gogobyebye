@@ -1,13 +1,13 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import Carousel from '../components/Widgets/CarouselContainer'
-import Posts from '../components/Posts'
-import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
+import React from "react";
+import Layout from "../components/Layout";
+import Carousel from "../components/Widgets/CarouselContainer";
+import Posts from "../components/Posts";
+import { graphql } from "gatsby";
+import SEO from "../components/SEO";
 
 export const query = graphql`
   {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 3) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 3) {
       nodes {
         frontmatter {
           title
@@ -16,6 +16,7 @@ export const query = graphql`
           date(formatString: "MMMM Do, YYYY")
           slug
           readTime
+          tags
           image {
             childImageSharp {
               fluid {
@@ -29,18 +30,20 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
+const IndexPage = ({ data }) => {
+  const {
+    allMdx: { nodes: posts },
+  } = data;
 
-const IndexPage = ({data}) => {
-  const {allMdx:{nodes:posts}} = data
-
-  return <Layout>
-    <SEO title={`Home`}/>
- <Carousel/>
- <Posts posts={posts} title="recently published"/>
-
+  return (
+    <Layout>
+      <SEO title={`Home`} />
+      <Carousel />
+      <Posts posts={posts} title="recently published" />
     </Layout>
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

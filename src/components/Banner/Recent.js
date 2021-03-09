@@ -43,6 +43,7 @@ const Recent = () => {
         </div>
       </Link>
     })}
+      <Link to='/posts' className="link-allposts" >All Posts</Link>
   </Wrapper>
   )
 }
@@ -73,6 +74,17 @@ const Wrapper = styled.div`
     h5 {
       color: var(--clr-primary-5);
     }
+  }
+  .link-allposts {
+    margin: 0 .25rem 1rem;
+    background: var(--clr-primary-5);
+    padding: 0.2rem 0.4rem;
+    text-transform: uppercase;
+    font-size: 0.5rem;
+    font-weight: 700;
+    border-radius: var(--radius);
+    letter-spacing: var(--spacing);
+    color: var(--clr-white);
   }
 `
 
