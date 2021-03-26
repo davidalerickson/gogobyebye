@@ -19,7 +19,7 @@ const NavBar = ({ toggle }) => {
         id="back-to-top-anchor"
       >
         <AppBar style={{ background: "white", color: "black" }}>
-          <HeaderAnimation />
+          <HeaderAnimation style={{visibility: "hidden"}}/>
           <NavWrapper>
             <nav className="navbar">
               <div className="nav-center">
