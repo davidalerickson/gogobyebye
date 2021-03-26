@@ -1,7 +1,5 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typoography from "@material-ui/core/Typography";
 import HideOnScroll from "../components/Widgets/HideOnScroll";
 import HeaderAnimation from "../components/HeaderAnimation";
 import { FaBars } from "react-icons/fa";
