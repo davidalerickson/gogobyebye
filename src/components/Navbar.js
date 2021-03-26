@@ -12,11 +12,11 @@ const NavBar = ({ toggle }) => {
   return (
     <>
       <div
-        position="fixed"
+        position="static"
         style={{ visibility: "hidden", marginBottom: "2rem" }}
         id="back-to-top-anchor"
       >
-        <AppBar style={{ background: "white", color: "black" }}>
+        <div style={{ background: "white", color: "black" }}>
           <HeaderAnimation style={{visibility: "hidden"}}/>
           <NavWrapper>
             <nav className="navbar">
@@ -31,7 +31,7 @@ const NavBar = ({ toggle }) => {
               </div>
             </nav>
           </NavWrapper>
-        </AppBar>
+        </div>
       </div>
 
       

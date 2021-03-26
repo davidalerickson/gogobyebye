@@ -52,13 +52,6 @@ module.exports = {
         gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
       },
     },
-
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `go_go_bye_bye`,
-      },
-    },
     {
       resolve: `gatsby-plugin-google-fonts-v2`,
       options: {

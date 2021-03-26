@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 import ByeByeLogo from "../assets/json/justTopLogoAnim.json"
-import LottieContainer from "../components/widgets/LottieContainer"
+import LottieContainer from "../components/Widgets/LottieContainer"
 
 const HeaderAnimation = () => {
     return (
