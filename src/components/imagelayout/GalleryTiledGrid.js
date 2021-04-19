@@ -8,6 +8,7 @@ const GalleryGridWrapper = styled.div`
   grid-template-rows: repeat(7, 5vw);
   grid-gap: 1rem;
   padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   .gallery__image {
     width: 100%;
     height: 100%;
